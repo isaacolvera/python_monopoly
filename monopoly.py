@@ -3,6 +3,8 @@
 # Author: Isaac Olvera
 
 import random
+import webbrowser
+import os
 from players import *
 from chance_and_communitychest import *
 from rent import *
@@ -25,7 +27,7 @@ board = [
     ["Corona", 120, True, 8, False, 60, 66, 0],
     ["Jail/Just Visiting", None, None, 50, None, None, None, None],
     ["Palmdale", 140, True, 10, False, 70, 77, 0],
-    ["Electric Company", 150, True, 50, False, 75, 83, None],
+    ["Southern California Edison", 150, True, 50, False, 75, 83, None],
     ["Inglewood", 140, True, 10, False, 70, 77, 0],
     ["Lancaster", 160, True, 12, False, 80, 88, 0],
     ["Quincy Railroad", 200, True, 25, False, 100, 110, None],
@@ -41,7 +43,7 @@ board = [
     ["Sacramento Valley Railroad", 200, True, 25, False, 100, 110, None],
     ["San Bernardino", 260, True, 22, False, 130, 143, 0],
     ["Costa Mesa", 260, True, 22, False, 130, 143, 0],
-    ["Water Works", 150, True, 50, False, 75, 83, None],
+    ["California Water Service", 150, True, 50, False, 75, 83, None],
     ["Anaheim", 280, True, 24, False, 140, 154, 0],
     ["Go To Jail", "GTJ", None, None, None, None, None, None],
     ["Fresno", 300, True, 26, False, 150, 165, 0],
@@ -124,6 +126,9 @@ def player_in_jail(player, turns_in_jail, location):
 
 def main():
     """Main function of the game, loops until there is a winner (all other players go bankrupt)"""
+    # Open html file to display the board in a web browser
+    webbrowser.open('file://' + os.path.realpath("board/index.html"))
+
     # Variables to help determine actions within the game
     playing_monopoly = True
     players = PlayerQuery()
