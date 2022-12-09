@@ -21,10 +21,17 @@ def maybe_bankrupt(board, player):
             "2. Sell houses"
         )
         
-        choice = int(input())
-        
-        while choice > 2 or choice < 1:
-            choice = int(input("\nPlease enter a valid number: "))
+        while True:
+            try:
+                choice = int(input())
+                
+                while choice > 2 or choice < 1:
+                    choice = int(input("\nPlease enter a valid number: "))
+                
+                break
+            
+            except ValueError:
+                print("\nPlease enter a valid number: ", end="")
         
         if choice == 1:
             mortgage_property(player)
