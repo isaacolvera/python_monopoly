@@ -30,10 +30,19 @@ def mortgage_property(player):
         
         select_property += 1
         print(str(select_property) + ". None")
-        ans = int(input())
         
-        while ans > select_property or ans < 1:
-            ans = int(input("\nPlease enter a valid number: "))
+        # Catch invalid inputs
+        while True:
+            try:
+                ans = int(input())
+                
+                while ans > select_property or ans < 1:
+                    ans = int(input("\nPlease enter a valid number: "))
+                
+                break
+            
+            except ValueError:
+                print("\nPlease enter a valid number: ", end="")
         
         # Player does not want to mortgage any of their properties
         if ans == select_property:
@@ -84,10 +93,19 @@ def unmortgage_property(player):
         
         select_property += 1
         print(str(select_property) + ". None")
-        ans = int(input())
         
-        while ans > select_property or ans < 1:
-            ans = int(input("\nPlease enter a valid number: "))
+        # Catch invalid inputs
+        while True:
+            try:
+                ans = int(input())
+                
+                while ans > select_property or ans < 1:
+                    ans = int(input("\nPlease enter a valid number: "))
+                
+                break
+            
+            except ValueError:
+                print("\nPlease enter a valid number: ", end="")
         
         # Player does not want to unmortgage any of their properties
         if ans == select_property:
