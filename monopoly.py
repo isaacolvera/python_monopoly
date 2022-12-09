@@ -3,8 +3,6 @@
 # Author: Isaac Olvera
 
 import random
-import webbrowser
-import os
 from players import *
 from chance_and_communitychest import *
 from rent import *
@@ -66,10 +64,19 @@ def player_in_jail(player, turns_in_jail, location):
         "2. Roll doubles for a chance to leave without paying and go next turn (3 turns max)"
     )
     
-    jail_ans = int(input())
-    
-    while jail_ans > 2 or jail_ans < 1:
-        jail_ans = int(input("\nPlease enter a valid number: "))
+    # Catch invalid inputs
+    while True:
+        try:
+            jail_ans = int(input())
+            
+            while jail_ans > 2 or jail_ans < 1:
+                jail_ans = int(input("\nPlease enter a valid number: "))
+            
+            break
+        
+        except ValueError:
+            print("\nPlease enter a valid number: ", end="")
+        
     
     # Player pays the $50 fine and will go the next turn
     if jail_ans == 1:
@@ -126,9 +133,6 @@ def player_in_jail(player, turns_in_jail, location):
 
 def main():
     """Main function of the game, loops until there is a winner (all other players go bankrupt)"""
-    # Open html file to display the board in a web browser
-    webbrowser.open('file://' + os.path.realpath("board/index.html"))
-
     # Variables to help determine actions within the game
     playing_monopoly = True
     players = PlayerQuery()
@@ -140,10 +144,20 @@ def main():
                     
     print("Welcome to Monopoly!")
     print("\nEnter the total number of players for this game (2-6): ")
-    num_of_players = int(input())
     
-    while num_of_players > 6 or num_of_players < 2:
-        num_of_players = int(input("\nPlease enter a valid number: "))
+    # Catch invalid inputs
+    while True:
+        try:
+            num_of_players = int(input())
+            
+            while num_of_players > 6 or num_of_players < 2:
+                num_of_players = int(input("\nPlease enter a valid number: "))
+                
+            break
+        
+        except ValueError:
+            print("\nPlease enter a valid number: ", end="")
+            
     
     player_query = players.circular_queue(num_of_players)
     
@@ -368,10 +382,18 @@ def main():
                         "9. End turn"
                     )
                     
-                    ans = int(input())
-                    
-                    while ans > 9 or ans < 1:
-                        ans = int(input("\nPlease enter a valid number: "))
+                    # Catch invalid inputs
+                    while True:
+                        try:
+                            ans = int(input())
+                            
+                            while ans > 9 or ans < 1:
+                                ans = int(input("\nPlease enter a valid number: "))
+                            
+                            break
+                        
+                        except ValueError:
+                            print("\nPlease enter a valid number: ", end="")
                     
                     # Player want to buy the property
                     if ans == 1:
