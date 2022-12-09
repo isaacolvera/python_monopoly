@@ -136,8 +136,12 @@ def player_in_jail(player, turns_in_jail, location):
 def main():
     """Main function of the game, loops until there is a winner (all other players go bankrupt)"""
     # Automatically open monopoly_board.png to display to the user
-    img = Image.open("board/monopoly_board.png")
-    img.show()
+    try:
+        img = Image.open("board/monopoly_board.png")
+        img.show()
+    
+    except:
+        print("Issue: Board image not within directory or not downloaded\n")
     
     # Variables to help determine actions within the game
     playing_monopoly = True
