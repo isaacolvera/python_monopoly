@@ -1,8 +1,10 @@
+# !usr/local/bin
 # Project 2 - "Monopoly Game" (monopoly.py)
 #
 # Author: Isaac Olvera
 
 import random
+from PIL import Image
 from players import *
 from chance_and_communitychest import *
 from rent import *
@@ -133,6 +135,10 @@ def player_in_jail(player, turns_in_jail, location):
 
 def main():
     """Main function of the game, loops until there is a winner (all other players go bankrupt)"""
+    # Automatically open monopoly_board.png to display to the user
+    img = Image.open("board/monopoly_board.png")
+    img.show()
+    
     # Variables to help determine actions within the game
     playing_monopoly = True
     players = PlayerQuery()
