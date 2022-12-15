@@ -21,4 +21,4 @@ try to stay in the game. If they can not fully pay off their debt, then the play
 bankrupt and they are out of the game.
 
 The game ends once all players except one go bankrupt (last one standing), or if the program
-is terminated by the user by closing the file (or through ctrl+c on the terminal)
+is terminated by the user by closing the window on their code editor application (or through ctrl+c on the terminal)
