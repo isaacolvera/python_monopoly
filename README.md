@@ -14,7 +14,7 @@ following:
 5. View their current properties and the amount of money they have
 
 Players can also pick up chance and community chest cards, they can go to jail, and they can land
-on income and luxury tax
+on income tax, luxury tax, and free parking
 
 When a player goes into debt, they can mortgage properties and sell their houses in order to
 try to stay in the game. If they can not fully pay off their debt, then the player goes
