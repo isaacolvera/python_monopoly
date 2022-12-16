@@ -1,6 +1,6 @@
 # Project 2 - "Monopoly Game" (trade.py)
 #
-# Authors: Isaac Olvera
+# Author: Isaac Olvera
 
 def trade(player_query, player):
     """Function that trades properties and/or money from one player to another"""
