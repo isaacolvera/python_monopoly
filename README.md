@@ -10,7 +10,7 @@ following:
 1. Buy properties
 2. Mortgage and unmortgage properties
 3. Buy and sell houses for properties
-4. Trade (Currently unavailable)
+4. Trade
 5. View their current properties and the amount of money they have
 
 Players can also pick up chance and community chest cards, they can go to jail, and they can land
